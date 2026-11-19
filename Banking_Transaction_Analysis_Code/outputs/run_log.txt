@@ -1,0 +1,109 @@
+Libraries imported successfully
+Not running in Colab - using local file: banking_transactions.csv
+Loaded: banking_transactions.csv -> (25558, 8)
+<class 'pandas.DataFrame'>
+RangeIndex: 25558 entries, 0 to 25557
+Data columns (total 8 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   TxnID             25558 non-null  str    
+ 1   AccountID         25558 non-null  str    
+ 2   TxnDate           25558 non-null  str    
+ 3   Type              25558 non-null  str    
+ 4   Amount            25558 non-null  float64
+ 5   MerchantCategory  25488 non-null  str    
+ 6   BalanceAfter      25558 non-null  float64
+ 7   IsFraud           25558 non-null  int64  
+dtypes: float64(2), int64(1), str(5)
+memory usage: 1.6 MB
+{'Debit': 21412, 'Credit': 4116, 'DEBIT': 12, 'debit': 7, ' Debit': 5, 'Credit ': 2, 'credit': 2, 'CREDIT': 2}
+{'invalid_dates': 0, 'non_positive_amounts': 0, 'invalid_type_values': 0, 'negative_balance_rows': 23}
+                  Missing values  Missing %
+TxnID                          0       0.00
+AccountID                      0       0.00
+TxnDate                        0       0.00
+Type                           0       0.00
+Amount                         0       0.00
+MerchantCategory              70       0.27
+BalanceAfter                   0       0.00
+IsFraud                        0       0.00
+Remaining missing values: 0
+Duplicate rows removed: 45 | rows now: 25513
+                count       mean        std  ...        75%         max  skew
+Amount        25513.0    8958.72   17725.81  ...    7395.76   214600.00  4.03
+BalanceAfter  25513.0  197610.86  160460.47  ...  250614.57  1545700.83  2.46
+
+[2 rows x 9 columns]
+          count      mean       std  ...       50%       75%        max
+Type                                 ...                               
+Credit   4115.0  34961.58  31032.30  ...  30800.00  50200.00  214600.00
+Debit   21398.0   3958.17   5867.96  ...   1810.54   4275.07  169863.11
+
+[2 rows x 8 columns]
+        Transactions         Total  ...    Maximum  Share of txns %
+Type                                ...                            
+Credit          4115  1.438669e+08  ...  214600.00            16.13
+Debit          21398  8.469689e+07  ...  169863.11            83.87
+
+[2 rows x 6 columns]
+Type          Credit        Debit         Net  Debit growth %
+Month                                                        
+2026-01  15901910.26   8974130.02  6927780.24             NaN
+2026-02  15844572.40   9481990.61  6362581.79            5.66
+2026-03  16258779.66   9470724.43  6788055.23           -0.12
+2026-04  15990524.24   9157609.82  6832914.42           -3.31
+2026-05  15966438.44  10116143.26  5850295.18           10.47
+2026-06  15795814.85   9572593.08  6223221.77           -5.37
+2026-07  16065405.35   8708384.28  7357021.07           -9.03
+2026-08  16029477.64   9996391.38  6033086.26           14.79
+2026-09  16013988.67   9218924.54  6795064.13           -7.78
+                        Total  Transactions   Average  Share %
+MerchantCategory                                              
+Rent              23403500.00          1822  12844.95    27.63
+Shopping          13607019.79          2765   4921.16    16.07
+Travel            12098232.95          1433   8442.59    14.28
+ATM Withdrawal     7619355.47          1428   5335.68     9.00
+Grocery            5681387.46          4210   1349.50     6.71
+Online Transfer    4654325.75           778   5982.42     5.50
+Utilities          4457546.81          2113   2109.58     5.26
+Education          3656078.84           568   6436.76     4.32
+Healthcare         3279319.80           959   3419.52     3.87
+Fuel               2874047.02          1658   1733.44     3.39
+Dining             1864473.95          2296    812.05     2.20
+Entertainment      1308220.99          1312    997.12     1.54
+Uncategorized       193382.59            56   3453.26     0.23
+{'q1': 869.22, 'q3': 3296.58, 'iqr_fence': 6937.62, 'p95': 11162.49, 'p99': 24584.64, 'disc_debits': 19576, 'count': 979, 'pct_of_debits': 5.0, 'value_share_pct': 31.36, 'iqr_outliers': 1967, 'fraud_in_hv': 256, 'fraud_captured_pct': 50.79}
+              Accounts  Avg_credit  Avg_debit  ...  Spend_ratio   Txns  Share %
+Segment                                        ...                             
+Low-value           90   262902.22  205436.43  ...         0.79  91.77     30.0
+Medium-value       123   416221.56  214972.47  ...         0.53  76.57     41.0
+High-value          87   793223.67  457080.45  ...         0.61  90.07     29.0
+
+[3 rows x 8 columns]
+{'contamination': 0.03, 'debit_rows': 21398, 'flagged': 642, 'fraud_in_flagged': 84, 'precision': 0.131, 'recall': 0.167, 'f1': 0.147, 'roc_auc': 0.855}
+[[0.2, 0.302, 0.723, 0.426, 242], [0.3, 0.399, 0.644, 0.492, 163], [0.4, 0.487, 0.545, 0.514, 113], [0.5, 0.532, 0.416, 0.467, 79]]
+              precision    recall  f1-score   support
+
+  Legitimate       0.99      0.99      0.99      4179
+       Fraud       0.53      0.42      0.47       101
+
+    accuracy                           0.98      4280
+   macro avg       0.76      0.70      0.73      4280
+weighted avg       0.98      0.98      0.98      4280
+
+                     accuracy  precision  recall     f1  roc_auc  pr_auc
+Logistic Regression     0.870      0.139   0.871  0.240    0.952   0.301
+Decision Tree           0.886      0.146   0.792  0.246    0.902   0.388
+Random Forest           0.978      0.532   0.416  0.467    0.956   0.483
+Isolation Forest        0.956      0.155   0.198  0.174    0.860   0.110
+1. Customers spend about 58.87% of the money they receive (debits INR 84.7 M vs credits INR 143.9 M), i.e. a net inflow of INR 59.2 M across the nine months.
+2. 'Rent' is the largest spending category (27.63% of debit value) and the top three categories together account for 58.0%. Rent is a fixed monthly payment, so most discretionary spending sits in Shopping, Travel and ATM cash - the natural focus for card offers and partnerships.
+3. Spending peaks in 2026-05 (INR 10.12 M) and is lowest in 2026-07 (INR 8.71 M); campaigns and liquidity planning can follow this pattern.
+4. Excluding rent, the top 5% of debits (>= INR 11,162) carry 31.36% of discretionary debit value, so a small set of transactions deserves extra monitoring.
+5. K-Means splits the 300 accounts into three tiers; the High-value tier is 29.0% of accounts but 46.95% of spending - the group to prioritise for relationship management.
+6. 9 accounts went below zero at least once (0.09% of transactions) - candidates for overdraft alerts and low-balance nudges.
+7. Fraud is rare (2.36% of debits); Random Forest gave the best F1 (0.467) with the highest precision (0.532), while Logistic Regression caught more fraud (recall 0.871) at the cost of many false alarms - the bank must choose the balance between missed fraud and review workload.
+8. Unsupervised Isolation Forest ranks fraud above normal activity (ROC AUC 0.855) but its fixed 3% cut-off flagged 642 debits and caught only 16.7% of fraud, so it is best used to prioritise manual review when labels are unavailable, not as a stand-alone detector.
+The analysis of 25,513 cleaned transactions from 300 accounts shows regular, salary-driven inflows and category-wise spending. K-Means produced three interpretable customer tiers (silhouette 0.288); Isolation Forest and Random Forest both detected unusual transactions, with Random Forest performing best on F1. Results should be re-validated on real bank data.
+
+All results saved to outputs/results.json

@@ -1,0 +1,797 @@
+{
+  "raw_rows": 25558,
+  "raw_cols": 8,
+  "columns": [
+    "TxnID",
+    "AccountID",
+    "TxnDate",
+    "Type",
+    "Amount",
+    "MerchantCategory",
+    "BalanceAfter",
+    "IsFraud"
+  ],
+  "dtypes": {
+    "TxnID": "str",
+    "AccountID": "str",
+    "TxnDate": "str",
+    "Type": "str",
+    "Amount": "float64",
+    "MerchantCategory": "str",
+    "BalanceAfter": "float64",
+    "IsFraud": "int64"
+  },
+  "raw_accounts": 300,
+  "raw_categories": 16,
+  "date_min": "2026-01-01",
+  "date_max": "2026-09-30",
+  "raw_type_values": {
+    "Debit": 21412,
+    "Credit": 4116,
+    "DEBIT": 12,
+    "debit": 7,
+    " Debit": 5,
+    "Credit ": 2,
+    "credit": 2,
+    "CREDIT": 2
+  },
+  "type_rows_fixed": 30,
+  "type_values_clean": {
+    "Debit": 21436,
+    "Credit": 4122
+  },
+  "validation": {
+    "invalid_dates": 0,
+    "non_positive_amounts": 0,
+    "invalid_type_values": 0,
+    "negative_balance_rows": 23
+  },
+  "missing": {
+    "TxnID": [
+      0,
+      0.0
+    ],
+    "AccountID": [
+      0,
+      0.0
+    ],
+    "TxnDate": [
+      0,
+      0.0
+    ],
+    "Type": [
+      0,
+      0.0
+    ],
+    "Amount": [
+      0,
+      0.0
+    ],
+    "MerchantCategory": [
+      70,
+      0.27
+    ],
+    "BalanceAfter": [
+      0,
+      0.0
+    ],
+    "IsFraud": [
+      0,
+      0.0
+    ]
+  },
+  "full_duplicates": 45,
+  "repeated_txnids": 45,
+  "rows_after_dedup": 25513,
+  "repeated_txnids_after": 0,
+  "clean_rows": 25513,
+  "engineered_features": [
+    "Month",
+    "MonthNum",
+    "DayOfWeek",
+    "DayName",
+    "IsWeekend",
+    "IsMonthStart",
+    "SignedAmount",
+    "BalanceBefore",
+    "NegBalanceFlag",
+    "AmountZ",
+    "AmountToBalance"
+  ],
+  "describe": {
+    "Amount": {
+      "count": 25513.0,
+      "mean": 8958.72,
+      "std": 17725.81,
+      "min": 64.03,
+      "25%": 994.83,
+      "50%": 2162.91,
+      "75%": 7395.76,
+      "max": 214600.0,
+      "skew": 4.03
+    },
+    "BalanceAfter": {
+      "count": 25513.0,
+      "mean": 197610.86,
+      "std": 160460.47,
+      "min": -21959.26,
+      "25%": 92247.73,
+      "50%": 158633.59,
+      "75%": 250614.57,
+      "max": 1545700.83,
+      "skew": 2.46
+    }
+  },
+  "describe_by_type": {
+    "Credit": {
+      "count": 4115.0,
+      "mean": 34961.58,
+      "std": 31032.3,
+      "min": 105.3,
+      "25%": 10014.57,
+      "50%": 30800.0,
+      "75%": 50200.0,
+      "max": 214600.0
+    },
+    "Debit": {
+      "count": 21398.0,
+      "mean": 3958.17,
+      "std": 5867.96,
+      "min": 64.03,
+      "25%": 923.98,
+      "50%": 1810.54,
+      "75%": 4275.07,
+      "max": 169863.11
+    }
+  },
+  "accounts": 300,
+  "categories": 17,
+  "fraud_rows": 504,
+  "fraud_pct": 1.98,
+  "txns_per_account_mean": 85.0,
+  "credit_debit": {
+    "Credit": {
+      "Transactions": 4115.0,
+      "Total": 143866911.51,
+      "Average": 34961.58,
+      "Median": 30800.0,
+      "Maximum": 214600.0,
+      "Share of txns %": 16.13
+    },
+    "Debit": {
+      "Transactions": 21398.0,
+      "Total": 84696891.42,
+      "Average": 3958.17,
+      "Median": 1810.53,
+      "Maximum": 169863.11,
+      "Share of txns %": 83.87
+    }
+  },
+  "net_flow": 59170020.09,
+  "spend_to_income_pct": 58.87,
+  "top_accounts": [
+    [
+      "ACC-1137",
+      947501.81
+    ],
+    [
+      "ACC-1094",
+      876899.0
+    ],
+    [
+      "ACC-1210",
+      843890.95
+    ],
+    [
+      "ACC-1290",
+      802350.53
+    ],
+    [
+      "ACC-1232",
+      719828.15
+    ]
+  ],
+  "acct_debit_mean": 282322.97,
+  "acct_debit_median": 242528.73,
+  "neg_balance_rows": 23,
+  "neg_balance_accounts": 9,
+  "neg_balance_pct": 0.09,
+  "monthly": [
+    [
+      "2026-01",
+      15901910.26,
+      8974130.02,
+      6927780.24
+    ],
+    [
+      "2026-02",
+      15844572.4,
+      9481990.61,
+      6362581.79
+    ],
+    [
+      "2026-03",
+      16258779.66,
+      9470724.43,
+      6788055.23
+    ],
+    [
+      "2026-04",
+      15990524.24,
+      9157609.82,
+      6832914.42
+    ],
+    [
+      "2026-05",
+      15966438.44,
+      10116143.26,
+      5850295.18
+    ],
+    [
+      "2026-06",
+      15795814.85,
+      9572593.08,
+      6223221.77
+    ],
+    [
+      "2026-07",
+      16065405.35,
+      8708384.28,
+      7357021.07
+    ],
+    [
+      "2026-08",
+      16029477.64,
+      9996391.38,
+      6033086.26
+    ],
+    [
+      "2026-09",
+      16013988.67,
+      9218924.54,
+      6795064.13
+    ]
+  ],
+  "peak_spend_month": [
+    "2026-05",
+    10116143.26
+  ],
+  "low_spend_month": [
+    "2026-07",
+    8708384.28
+  ],
+  "avg_monthly_debit": 9410765.71,
+  "category_spend": [
+    [
+      "Rent",
+      23403500.0,
+      1822,
+      12844.95,
+      27.63
+    ],
+    [
+      "Shopping",
+      13607019.79,
+      2765,
+      4921.16,
+      16.07
+    ],
+    [
+      "Travel",
+      12098232.95,
+      1433,
+      8442.59,
+      14.28
+    ],
+    [
+      "ATM Withdrawal",
+      7619355.47,
+      1428,
+      5335.68,
+      9.0
+    ],
+    [
+      "Grocery",
+      5681387.46,
+      4210,
+      1349.5,
+      6.71
+    ],
+    [
+      "Online Transfer",
+      4654325.75,
+      778,
+      5982.42,
+      5.5
+    ],
+    [
+      "Utilities",
+      4457546.81,
+      2113,
+      2109.58,
+      5.26
+    ],
+    [
+      "Education",
+      3656078.84,
+      568,
+      6436.76,
+      4.32
+    ],
+    [
+      "Healthcare",
+      3279319.8,
+      959,
+      3419.52,
+      3.87
+    ],
+    [
+      "Fuel",
+      2874047.02,
+      1658,
+      1733.44,
+      3.39
+    ],
+    [
+      "Dining",
+      1864473.95,
+      2296,
+      812.05,
+      2.2
+    ],
+    [
+      "Entertainment",
+      1308220.99,
+      1312,
+      997.12,
+      1.54
+    ],
+    [
+      "Uncategorized",
+      193382.59,
+      56,
+      3453.26,
+      0.23
+    ]
+  ],
+  "hv": {
+    "q1": 869.22,
+    "q3": 3296.58,
+    "iqr_fence": 6937.62,
+    "p95": 11162.49,
+    "p99": 24584.64,
+    "disc_debits": 19576,
+    "count": 979,
+    "pct_of_debits": 5.0,
+    "value_share_pct": 31.36,
+    "iqr_outliers": 1967,
+    "fraud_in_hv": 256,
+    "fraud_captured_pct": 50.79
+  },
+  "hv_by_category": [
+    [
+      "Travel",
+      328,
+      7458411.64
+    ],
+    [
+      "Shopping",
+      289,
+      5490677.98
+    ],
+    [
+      "Online Transfer",
+      116,
+      2086382.64
+    ],
+    [
+      "ATM Withdrawal",
+      109,
+      1813145.66
+    ],
+    [
+      "Education",
+      78,
+      1463508.37
+    ],
+    [
+      "Healthcare",
+      51,
+      801843.7
+    ]
+  ],
+  "top10_hv": [
+    [
+      "TXN-005083",
+      "ACC-1116",
+      "2026-02-24",
+      "Travel",
+      169863.11
+    ],
+    [
+      "TXN-005118",
+      "ACC-1257",
+      "2026-02-24",
+      "Travel",
+      67991.38
+    ],
+    [
+      "TXN-005094",
+      "ACC-1163",
+      "2026-02-24",
+      "Shopping",
+      65331.69
+    ],
+    [
+      "TXN-004573",
+      "ACC-1271",
+      "2026-02-17",
+      "Travel",
+      59216.22
+    ],
+    [
+      "TXN-016718",
+      "ACC-1074",
+      "2026-06-29",
+      "Travel",
+      57761.54
+    ],
+    [
+      "TXN-015264",
+      "ACC-1232",
+      "2026-06-10",
+      "Education",
+      56091.1
+    ],
+    [
+      "TXN-010774",
+      "ACC-1212",
+      "2026-04-26",
+      "Shopping",
+      54863.65
+    ],
+    [
+      "TXN-009886",
+      "ACC-1210",
+      "2026-04-14",
+      "Shopping",
+      53517.25
+    ],
+    [
+      "TXN-001275",
+      "ACC-1215",
+      "2026-01-11",
+      "Travel",
+      51936.25
+    ],
+    [
+      "TXN-016230",
+      "ACC-1072",
+      "2026-06-23",
+      "Travel",
+      51169.32
+    ]
+  ],
+  "corr_amount_fraud": 0.228,
+  "corr_ratio_fraud": 0.034,
+  "corr_z_fraud": 0.257,
+  "weekday": [
+    [
+      "Monday",
+      3889.59,
+      3030
+    ],
+    [
+      "Tuesday",
+      4014.64,
+      3090
+    ],
+    [
+      "Wednesday",
+      4080.33,
+      2986
+    ],
+    [
+      "Thursday",
+      3987.1,
+      3053
+    ],
+    [
+      "Friday",
+      3876.37,
+      3099
+    ],
+    [
+      "Saturday",
+      3833.55,
+      3021
+    ],
+    [
+      "Sunday",
+      4025.54,
+      3119
+    ]
+  ],
+  "kmeans_k": {
+    "k": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "inertia": [
+      1129.1,
+      842.7,
+      671.7,
+      586.4,
+      518.7,
+      469.2,
+      431.8
+    ],
+    "silhouette": [
+      0.312,
+      0.288,
+      0.296,
+      0.278,
+      0.248,
+      0.248,
+      0.244
+    ]
+  },
+  "kmeans_final": {
+    "k": 3,
+    "silhouette": 0.288,
+    "inertia": 842.7
+  },
+  "segments": {
+    "Low-value": {
+      "Accounts": 90.0,
+      "Avg_credit": 262902.22,
+      "Avg_debit": 205436.43,
+      "Avg_txn": 5081.8,
+      "Avg_balance": 83217.89,
+      "Spend_ratio": 0.79,
+      "Txns": 91.77,
+      "Share %": 30.0
+    },
+    "Medium-value": {
+      "Accounts": 123.0,
+      "Avg_credit": 416221.56,
+      "Avg_debit": 214972.47,
+      "Avg_txn": 8339.74,
+      "Avg_balance": 195843.26,
+      "Spend_ratio": 0.53,
+      "Txns": 76.57,
+      "Share %": 41.0
+    },
+    "High-value": {
+      "Accounts": 87.0,
+      "Avg_credit": 793223.67,
+      "Avg_debit": 457080.45,
+      "Avg_txn": 14287.59,
+      "Avg_balance": 331133.01,
+      "Spend_ratio": 0.61,
+      "Txns": 90.07,
+      "Share %": 29.0
+    }
+  },
+  "segment_spend_share": {
+    "Low-value": 21.83,
+    "Medium-value": 31.22,
+    "High-value": 46.95
+  },
+  "pca_var": 90.3,
+  "iso": {
+    "contamination": 0.03,
+    "debit_rows": 21398,
+    "flagged": 642,
+    "fraud_in_flagged": 84,
+    "precision": 0.131,
+    "recall": 0.167,
+    "f1": 0.147,
+    "roc_auc": 0.855
+  },
+  "iso_flag_by_category": [
+    [
+      "Travel",
+      178
+    ],
+    [
+      "Rent",
+      146
+    ],
+    [
+      "Shopping",
+      138
+    ],
+    [
+      "Online Transfer",
+      45
+    ],
+    [
+      "ATM Withdrawal",
+      39
+    ]
+  ],
+  "split": {
+    "train": 17118,
+    "test": 4280,
+    "features": 22,
+    "fraud_train": 403,
+    "fraud_test": 101,
+    "fraud_pct_debit": 2.36
+  },
+  "rf_cv_auc": {
+    "mean": 0.958,
+    "std": 0.007,
+    "folds": [
+      0.96,
+      0.954,
+      0.969,
+      0.95,
+      0.956
+    ]
+  },
+  "rf_importance": [
+    [
+      "AmountZ",
+      0.2131
+    ],
+    [
+      "Amount",
+      0.2105
+    ],
+    [
+      "AmountToBalance",
+      0.178
+    ],
+    [
+      "cat_Rent",
+      0.0814
+    ],
+    [
+      "cat_Online Transfer",
+      0.0803
+    ],
+    [
+      "BalanceBefore",
+      0.0504
+    ],
+    [
+      "MonthNum",
+      0.0276
+    ],
+    [
+      "DayOfWeek",
+      0.0225
+    ],
+    [
+      "cat_Grocery",
+      0.0209
+    ],
+    [
+      "cat_Travel",
+      0.0188
+    ]
+  ],
+  "rf_threshold": [
+    [
+      0.2,
+      0.302,
+      0.743,
+      0.43,
+      248
+    ],
+    [
+      0.3,
+      0.396,
+      0.663,
+      0.496,
+      169
+    ],
+    [
+      0.4,
+      0.478,
+      0.535,
+      0.505,
+      113
+    ],
+    [
+      0.5,
+      0.553,
+      0.416,
+      0.475,
+      76
+    ]
+  ],
+  "rf_confusion": {
+    "tn": 4145,
+    "fp": 34,
+    "fn": 59,
+    "tp": 42
+  },
+  "rf_metrics": {
+    "accuracy": 0.978,
+    "precision": 0.553,
+    "recall": 0.416,
+    "f1": 0.475,
+    "roc_auc": 0.958,
+    "pr_auc": 0.491
+  },
+  "rf_report": {
+    "Legitimate": {
+      "precision": 0.986,
+      "recall": 0.992,
+      "f1-score": 0.989,
+      "support": 4179.0
+    },
+    "Fraud": {
+      "precision": 0.553,
+      "recall": 0.416,
+      "f1-score": 0.475,
+      "support": 101.0
+    },
+    "macro avg": {
+      "precision": 0.769,
+      "recall": 0.704,
+      "f1-score": 0.732,
+      "support": 4280.0
+    },
+    "weighted avg": {
+      "precision": 0.976,
+      "recall": 0.978,
+      "f1-score": 0.977,
+      "support": 4280.0
+    }
+  },
+  "comparison": {
+    "Logistic Regression": {
+      "accuracy": 0.87,
+      "precision": 0.139,
+      "recall": 0.871,
+      "f1": 0.24,
+      "roc_auc": 0.952,
+      "pr_auc": 0.301
+    },
+    "Decision Tree": {
+      "accuracy": 0.886,
+      "precision": 0.146,
+      "recall": 0.792,
+      "f1": 0.246,
+      "roc_auc": 0.902,
+      "pr_auc": 0.388
+    },
+    "Random Forest": {
+      "accuracy": 0.978,
+      "precision": 0.553,
+      "recall": 0.416,
+      "f1": 0.475,
+      "roc_auc": 0.958,
+      "pr_auc": 0.491
+    },
+    "Isolation Forest": {
+      "accuracy": 0.956,
+      "precision": 0.155,
+      "recall": 0.198,
+      "f1": 0.174,
+      "roc_auc": 0.86,
+      "pr_auc": 0.11
+    }
+  },
+  "best_model_f1": "Random Forest",
+  "best_model_auc": "Random Forest",
+  "insights": [
+    "Customers spend about 58.87% of the money they receive (debits INR 84.7 M vs credits INR 143.9 M), i.e. a net inflow of INR 59.2 M across the nine months.",
+    "'Rent' is the largest spending category (27.63% of debit value) and the top three categories together account for 58.0%. Rent is a fixed monthly payment, so most discretionary spending sits in Shopping, Travel and ATM cash - the natural focus for card offers and partnerships.",
+    "Spending peaks in 2026-05 (INR 10.12 M) and is lowest in 2026-07 (INR 8.71 M); campaigns and liquidity planning can follow this pattern.",
+    "Excluding rent, the top 5% of debits (>= INR 11,162) carry 31.36% of discretionary debit value, so a small set of transactions deserves extra monitoring.",
+    "K-Means splits the 300 accounts into three tiers; the High-value tier is 29.0% of accounts but 46.95% of spending - the group to prioritise for relationship management.",
+    "9 accounts went below zero at least once (0.09% of transactions) - candidates for overdraft alerts and low-balance nudges.",
+    "Fraud is rare (2.36% of debits); Random Forest gave the best F1 (0.475) with the highest precision (0.553), while Logistic Regression caught more fraud (recall 0.871) at the cost of many false alarms - the bank must choose the balance between missed fraud and review workload.",
+    "Unsupervised Isolation Forest ranks fraud above normal activity (ROC AUC 0.855) but its fixed 3% cut-off flagged 642 debits and caught only 16.7% of fraud, so it is best used to prioritise manual review when labels are unavailable, not as a stand-alone detector."
+  ],
+  "conclusion": "The analysis of 25,513 cleaned transactions from 300 accounts shows regular, salary-driven inflows and category-wise spending. K-Means produced three interpretable customer tiers (silhouette 0.288); Isolation Forest and Random Forest both detected unusual transactions, with Random Forest performing best on F1. Results should be re-validated on real bank data."
+}
